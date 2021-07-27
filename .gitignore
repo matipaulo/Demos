@@ -1,0 +1,9 @@
+﻿.vscode/
+.vs/
+obj/
+bin/
+.idea/
+*.user
+*.csproj.user
+/Qu.Extensions.ApiTest/*.user
+launchSettings.json
