@@ -1,14 +1,11 @@
-using CQRS.Application.Commands;
-using CQRS.Core.Data;
-using MediatR;
+using CQRS.Application;
+using CQRS.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
 
 namespace CQRS.Api
 {
@@ -24,8 +21,10 @@ namespace CQRS.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SchoolContext>(options => options.UseInMemoryDatabase(databaseName: "School"));
-            services.AddMediatR(typeof(CreateStudentCommand).GetTypeInfo().Assembly);
+            services.AddEntityFramework(Configuration);
+            services.AddRepositories();
+
+            services.AddMediator();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
