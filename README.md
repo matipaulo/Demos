@@ -1,2 +1,10 @@
-# Demos
-A collection of demos for published articles.
+# Medium projects
+This repo contains the different projects used from [Medium](https://medium.com/@matias.paulo84) stories.
+- [Experimenting with HttpClient](https://medium.com/@matias.paulo84/experimenting-with-httpclient-cf9f5dda7195)
+- [RecyclableMemoryStream vs MemoryStream](https://medium.com/@matias.paulo84/recyclablememorystream-vs-memorystream-c4aa341324a9)
+- [CQRS with MediatR](https://medium.com/@matias.paulo84/cqrs-with-mediatr-f2154d837909)
+- [High-performance CSV parser with System.IO.Pipelines](https://medium.com/@matias.paulo84/high-performance-csv-parser-with-system-io-pipelines-3678d4a5217a)
+- [Adding pipelins to MediatR](https://medium.com/@matias.paulo84/adding-pipelins-to-mediatr-76ac70f4bcc7)
+- [Redis cache in .NET Core](https://medium.com/@matias.paulo84/redis-cache-in-net-core-1658e7a3be86)
+- [GraphQL playground](https://medium.com/@matias.paulo84/graphql-playground-305bb04df93b)
+- [Publisher/Subscriber messaging with Redis](https://medium.com/@matias.paulo84/publisher-subscriber-messaging-with-redis-51a9d3bb7ae1)

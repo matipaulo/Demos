@@ -1,3 +1,4 @@
+using DistributedCache.API.BackgroundServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,7 @@ namespace DistributedCache.API
             });
 
             services.AddSingleton<IConnectionMultiplexer>(x => ConnectionMultiplexer.Connect(Configuration.GetValue<string>("RedisConnection")));
+            services.AddHostedService<Subscriber>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
