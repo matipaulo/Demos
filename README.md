@@ -8,3 +8,4 @@ This repo contains the different projects used from [Medium](https://medium.com/
 - [Redis cache in .NET Core](https://medium.com/@matias.paulo84/redis-cache-in-net-core-1658e7a3be86)
 - [GraphQL playground](https://medium.com/@matias.paulo84/graphql-playground-305bb04df93b)
 - [Publisher/Subscriber messaging with Redis](https://medium.com/@matias.paulo84/publisher-subscriber-messaging-with-redis-51a9d3bb7ae1)
+- [Net Core + Serilog + ElasticSearch + Kibana](https://medium.com/@matias.paulo84/net-core-serilog-elasticsearch-kibana-3bd080ff4c1e)
