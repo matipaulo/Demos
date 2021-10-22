@@ -9,3 +9,4 @@ This repo contains the different projects used from [Medium](https://medium.com/
 - [GraphQL playground](https://medium.com/@matias.paulo84/graphql-playground-305bb04df93b)
 - [Publisher/Subscriber messaging with Redis](https://medium.com/@matias.paulo84/publisher-subscriber-messaging-with-redis-51a9d3bb7ae1)
 - [Net Core + Serilog + ElasticSearch + Kibana](https://medium.com/@matias.paulo84/net-core-serilog-elasticsearch-kibana-3bd080ff4c1e)
+- [How to use cancellation tokens?](https://medium.com/@matias.paulo84/how-to-use-cancellation-tokens-e792bd7aa028)
