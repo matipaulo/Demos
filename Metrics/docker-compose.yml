@@ -1,0 +1,38 @@
+version: '3.4'
+
+networks:
+  dotnetcoreprometheusgrafana:
+
+services:
+  webapi:
+    image: ${DOCKER_REGISTRY-}webapi
+    build:
+      context: .
+      dockerfile: WebApi/Dockerfile
+    networks: 
+      - dotnetcoreprometheusgrafana
+  
+  prometheus:
+    image: quay.io/prometheus/prometheus:latest
+    depends_on:
+        - webapi
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks: 
+      - dotnetcoreprometheusgrafana
+    restart: always
+
+  grafana:
+      image : grafana/grafana
+      depends_on:
+        - prometheus
+      ports:
+        - 3000:3000
+      restart: always
+      environment:
+        - GF_SECURITY_ADMIN_PASSWORD=admin1
+        - GF_USERS_ALLOW_SIGN_UP=false
+      networks:
+        - dotnetcoreprometheusgrafana 
