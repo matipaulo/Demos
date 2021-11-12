@@ -11,3 +11,4 @@ This repo contains the different projects used from [Medium](https://medium.com/
 - [Net Core + Serilog + ElasticSearch + Kibana](https://medium.com/@matias.paulo84/net-core-serilog-elasticsearch-kibana-3bd080ff4c1e)
 - [How to use cancellation tokens?](https://medium.com/@matias.paulo84/how-to-use-cancellation-tokens-e792bd7aa028)
 - [Collecting metrics in AspNet Core app](https://medium.com/@matias.paulo84/collecting-metrics-in-aspnet-core-app-c626d946ca8a)
+- [Containerized microservices with sync/async communication](https://medium.com/@matias.paulo84/containerized-microservices-with-sync-async-communication-56d871866795)

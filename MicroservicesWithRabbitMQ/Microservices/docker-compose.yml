@@ -1,0 +1,70 @@
+version: '3.8'
+
+networks:
+  dotnetcorenetwork:
+    driver: bridge
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    ports:
+        - 5672:5672
+        - 15672:15672
+    environment:
+        - RABBITMQ_DEFAULT_USER=guest
+        - RABBITMQ_DEFAULT_PASS=guest
+    image: rabbitmq:3-management
+    networks:
+        - dotnetcorenetwork
+
+  catalog.api:
+    container_name: catalogapi
+    ports:
+        - 5000:80
+        - 5001:443
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: Services/Catalog.Api/Dockerfile
+    restart: always
+    networks:
+        - dotnetcorenetwork
+  
+  basket.api:
+    container_name: basketapi
+    ports:
+        - 6000:80
+        - 6001:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    image: ${DOCKER_REGISTRY-}basketapi
+    build:
+      context: .
+      dockerfile: Services/Basket.Api/Dockerfile
+    restart: always
+    networks:
+        - dotnetcorenetwork
+    depends_on:
+        - rabbitmq
+        - catalogapi
+
+  ordering.api:
+    container_name: orderingapi
+    ports:
+        - 7000:80
+        - 7001:443
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ASPNETCORE_URLS=https://+:443;http://+:80
+    image: ${DOCKER_REGISTRY-}orderingapi
+    build:
+      context: .
+      dockerfile: Services/Ordering.Api/Dockerfile
+    restart: always
+    networks:
+        - dotnetcorenetwork
+    depends_on:
+        - rabbitmq

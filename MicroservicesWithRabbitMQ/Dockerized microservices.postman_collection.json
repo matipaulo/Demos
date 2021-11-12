@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "56eb0759-9956-4fd4-9696-3c0f3af7ea7c",
+		"name": "Dockerized microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create basket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var basketId = JSON.parse(responseBody).id;\r",
+							"pm.environment.set(\"basketId\", basketId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:6001/api/Basket",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"api",
+						"Basket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"quantity\": 3\n}"
+				},
+				"url": {
+					"raw": "https://localhost:6001/api/Basket/{{basketId}}/items",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"api",
+						"Basket",
+						"{{basketId}}",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get basket",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:6001/api/Basket/{{basketId}}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"api",
+						"Basket",
+						"{{basketId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Jhon\",\n  \"lastName\": \"Doe\",\n  \"email\": \"JhonDoe@yopmail.com\",\n  \"address\": \"Fake street 123\",\n  \"cardName\": \"Payoneer\",\n  \"cardNumber\": \"456123658974\",\n  \"expiration\": \"10/28\",\n  \"cvv\": \"123\"\n}\n"
+				},
+				"url": {
+					"raw": "https://localhost:6001/api/Basket/{{basketId}}/checkout",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"api",
+						"Basket",
+						"{{basketId}}",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
