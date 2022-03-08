@@ -13,3 +13,4 @@ This repo contains the different projects used from [Medium](https://medium.com/
 - [Collecting metrics in AspNet Core app](https://medium.com/@matias.paulo84/collecting-metrics-in-aspnet-core-app-c626d946ca8a)
 - [Containerized microservices with sync/async communication](https://medium.com/@matias.paulo84/containerized-microservices-with-sync-async-communication-56d871866795)
 - [How to perform load and stress tests](https://medium.com/@matias.paulo84/load-and-stress-testing-in-net-6-725ba346cf78).
+- [Minimal APIs](https://medium.com/@matias.paulo84/minimal-apis-in-net6-b6c263197434)
