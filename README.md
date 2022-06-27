@@ -14,3 +14,4 @@ This repo contains the different projects used from [Medium](https://medium.com/
 - [Containerized microservices with sync/async communication](https://medium.com/@matias.paulo84/containerized-microservices-with-sync-async-communication-56d871866795)
 - [How to perform load and stress tests](https://medium.com/@matias.paulo84/load-and-stress-testing-in-net-6-725ba346cf78).
 - [Minimal APIs](https://medium.com/@matias.paulo84/minimal-apis-in-net6-b6c263197434)
+- [Are you handling exceptions correctly?](https://medium.com/@matias.paulo84/3-ways-to-perform-global-error-handling-9966983e329d)
